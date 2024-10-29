@@ -1,0 +1,106 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<ion-content>
+  <div class ="fullscreen-container">
+    <div class="fondazo">
+      <div class="header">
+        <!--<div class="iconazo" (click)="irA('resultados/' + parametro)">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36 " >
+            <path d="M7.5,21H2V9h5.5V21z M14.75,3h-5.5v18h5.5V3z M22,11h-5.5v10H22V11z"  />
+          </svg>
+        </div>-->
+
+        <div class="iconazo" (click)="irA('home')">
+          <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 24 34" width="100%" preserveAspectRatio="none">
+            <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
+          </svg>
+        </div>
+        <div class="titulo">
+          <h1 class="estilo-titulo">Cosas {{parametro}}</h1>
+        </div>
+        <div class="icon-logout" (click)="cerrarSesion()"> 
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 21 21">
+            <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="container">
+      <ng-container *ngFor="let item of items">
+        <div class="card">
+          <div class="texto-card">
+            <p class="usuario">{{ item.usuario }}</p>
+            <p class="hora">{{ item.Fecha }}</p>
+          </div>
+          
+          <div class="foto">
+            <img [src]="item.url" alt="Imagen de {{ item.text }}">
+          </div>
+          
+          <div class="likes">
+            <div class="mg" (click)="toggleLike(item.id)" >
+
+              <div *ngIf="!item.hasLiked">
+                <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 24 24" width="100%" preserveAspectRatio="none" >
+                  <path d="M13.11 5.72l-.57 2.89c-.12.59.04 1.2.42 1.66.38.46.94.73 1.54.73H20v1.08L17.43 18H9.34c-.18 0-.34-.16-.34-.34V9.82l4.11-4.1M14 2L7.59 8.41C7.21 8.79 7 9.3 7 9.83v7.83C7 18.95 8.05 20 9.34 20h8.1c.71 0 1.36-.37 1.72-.97l2.67-6.15c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2zM4 9H2v11h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1z" fill="ffffff"/>
+                </svg>
+              </div>
+              
+              <div  *ngIf="item.hasLiked">
+                <svg height="100%" viewBox="0 0 24 24" width="100%" preserveAspectRatio="none" style="fill:white"
+                >
+                  <path
+                    d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-2z"
+                    fill="rgb(255,255,255)"
+                  />
+              </svg>
+              </div>
+            </div>
+            <!-- <span>{{ item.likesCount }} Likes</span> Contador de likes -->
+          </div>  
+        </div>
+      </ng-container>
+      
+      
+    </div>
+
+    <div class="botonResultados" (click)="irA('resultados/' + parametro)">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36 " >
+        <path d="M7.5,21H2V9h5.5V21z M14.75,3h-5.5v18h5.5V3z M22,11h-5.5v10H22V11z"  />
+      </svg>
+    </div>
+
+    <div class="boton-subir" (click)="irA('subir-foto/' + parametro)">
+      +
+    </div>
+  </div>
+
+  <div class="modal-overlay" *ngIf="modal">
+    <div class="modal-content">
+      <h2>Cerrar sesión</h2>
+      <p>¿Estás seguro que querés cerrar sesión?</p>
+      <div class="botonesss">
+        <div>
+          <button  (click)="closeModal()" class="volver">Volver</button>
+        </div>
+        <div class="noVolver">
+          <button (click)="desloguearse()"  color="primary">Cerrar sesión</button>
+        </div>
+      </div>
+      
+     
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-overlay">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando...</p>
+  </div>		
+
+
+</ion-content>
+
+

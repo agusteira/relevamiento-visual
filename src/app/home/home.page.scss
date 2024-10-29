@@ -1,0 +1,111 @@
+.fullscreen-container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-height: 100%;
+  background: linear-gradient(45deg, #F7D002, #FFA500); /* Fondo degradado */
+}
+
+/*=========================================*/
+/*================HEADER=========================*/
+
+.header {
+  display: flex;                        /* Usar flexbox para el header */
+  justify-content: space-between;       /* Espaciado entre los elementos */
+  align-items: center;                  /* Alinear verticalmente */
+  position: relative;                   /* Necesario para el posicionamiento absoluto del ícono */
+  color: #1F1300;
+  width: 80%;
+  height: 10%;
+  border-bottom: 3px solid #333333;    /* Línea separadora */
+  margin: auto;
+}
+
+.titulo {
+  text-align: center;                   /* Centrar el texto */
+  justify-content: center;
+  margin: 0;                           /* Eliminar margen */
+
+  font-family: 'Asap', "Montserrat";
+  color: #333333;
+  flex: 1;                             /* Permitir que el título tome el espacio disponible */
+}
+
+.icon-logout {
+  display: flex;                        /* Usar flexbox para centrar el SVG */
+  align-items: center;                  /* Centrar verticalmente el ícono */
+  justify-content: center;              /* Alinear horizontalmente el ícono */
+  width: 30px;                          /* Ancho del ícono contenedor */
+  height: 50px;                         /* Alto del ícono contenedor */
+}
+.iconazo{
+  display: flex;                        /* Usar flexbox para centrar el SVG */
+  align-items: center;                  /* Centrar verticalmente el ícono */
+  justify-content: center;              /* Alinear horizontalmente el ícono */
+  width: 30px;                          /* Ancho del ícono contenedor */
+  height: 50px;                         /* Alto del ícono contenedor */
+  fill:#f7ce0200
+}
+
+
+/*=========================================*/
+/*=================Container========================*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top:5%;
+  height: 85%;
+  max-height: 90%;
+}
+
+/*=========================================*/
+/*=================Card========================*/
+
+.card {
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #004080;
+  color: white;
+  overflow: hidden; /* Para evitar que la imagen se salga del contenedor */
+  
+}
+.card:hover{
+  background-color: #002243;
+}
+
+.foto {
+  margin-top: -10%;
+  width: 80%; /* Ajusta la imagen al 100% del ancho del contenedor */
+  height: 80%; /* Ajusta la imagen al 100% de la altura del contenedor */
+  margin:auto;
+}
+
+.texto-card {
+  position: absolute; /* Mantiene el texto encima de la imagen */
+  color: white; /* Cambia el color a blanco para un mejor contraste */
+  font-weight: bold;
+  font-size: 47px; /* Ajusta el tamaño según sea necesario */
+  text-shadow: 1px 1px 5px rgb(0, 0, 0); /* Sombra del texto para mayor legibilidad */
+  background-color: #000000ab;
+  border-radius: 20px;
+  padding: 5px;
+}
+/*=========================================*/
+
+.estilo-titulo{
+  font-family: 'Asap', "Montserrat";
+  font-weight: bold;
+  font-size: 45px;
+}

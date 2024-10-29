@@ -1,0 +1,10 @@
+{
+  "appId": "io.relevamiento.visual",
+  "appName": "Relevamiento visual",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

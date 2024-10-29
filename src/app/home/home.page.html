@@ -1,0 +1,57 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<ion-content>
+  <div class ="fullscreen-container">
+    <div class="header">
+      <div class="iconazo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+        </svg>
+      </div>
+      <div class="titulo">
+        <h1 class="estilo-titulo">Elige</h1>
+      </div>
+      <div class="icon-logout" (click)="cerrarSesion()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 21 21">
+          <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+        </svg>
+      </div>
+    </div>
+    
+
+    <div class="container">
+      <div class="card" (click)="ir('lindas')">
+        <div class="foto">
+          <img src="assets/png/lindo.png" alt="">
+        </div>
+        
+        <p class="texto-card">Cosas lindas</p>
+      </div>
+      <div class="card" (click)="ir('feas')">
+        <div class="foto">
+          <img src="assets/png/vomitar.png" alt="">
+        </div>
+        <p class="texto-card">Cosas feas</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-overlay" *ngIf="modal">
+    <div class="modal-content">
+      <h2>Cerrar sesión</h2>
+      <p>¿Estás seguro que querés cerrar sesión?</p>
+      <div class="botonesss">
+        <div>
+          <button  (click)="closeModal()" class="volver">Volver</button>
+        </div>
+        <div class="noVolver">
+          <button (click)="desloguearse()"  color="primary">Cerrar sesión</button>
+        </div>
+      </div>
+      
+     
+    </div>
+  </div>
+</ion-content>
+
+

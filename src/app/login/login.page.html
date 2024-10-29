@@ -1,0 +1,63 @@
+
+
+<ion-content>
+  <div class="container">
+    <div class="screen">
+      <div class="screen__content">
+        <form class="login">
+          <div class="login__field">
+            <i class="login__icon fas fa-user"></i>
+            <input type="text" class="login__input" placeholder="Correo electrónico"  [(ngModel)]="correo" name="correo">
+          </div>
+          <div class="login__field">
+            <i class="login__icon fas fa-lock"></i>
+            <input type="password" class="login__input" placeholder="Contraseña" [(ngModel)]="clave" name="clave">
+          </div>
+          <button class="button login__submit" (click)="IniciarSesion(correo, clave)">
+            
+            <span class="button__text">Iniciar sesión</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+          </button>				
+          
+        </form>
+        <div class="butones">
+          <button class="button accesoRapido" (click)="accesoRapido('admin@admin.com', '111111')">
+            <span class="button__text textaccesoRapido">1</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+          </button>	
+          <button class="button accesoRapido" (click)="accesoRapido('invitado@invitado.com', '222222')">
+            <span class="button__text textaccesoRapido">2</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+          </button>	
+          <button class="button accesoRapido" (click)="accesoRapido('usuario@usuario.com', '333333')">
+            <span class="button__text textaccesoRapido">3</span>
+            <i class="button__icon fas fa-chevron-right"></i>
+          </button>	
+        </div>
+      </div>
+      <div class="screen__background">
+        
+        <span class="screen__background__shape screen__background__shape4"></span>
+        <span class="screen__background__shape screen__background__shape3"></span>		
+        <span class="screen__background__shape screen__background__shape2"></span>
+        <span class="screen__background__shape screen__background__shape1"></span>
+        
+      </div>
+      <!-- Overlay de carga -->
+      <div *ngIf="isLoading" class="loading-overlay">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Cargando...</p>
+      </div>		
+    </div>
+  </div>
+
+  
+  <div class="modal-overlay" *ngIf="modal">
+    <div class="modal-content">
+      <h2>Credenciales Inválidas</h2>
+      <p>Las credenciales son invalidas y/o incorrectas</p>
+      <button (click)="closeModal()">Cerrar</button>
+    </div>
+  </div>
+
+</ion-content>

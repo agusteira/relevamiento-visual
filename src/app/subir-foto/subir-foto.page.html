@@ -1,0 +1,95 @@
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<ion-content>
+  <div class="fullscreen-container">
+    <div class="fondazo">
+      <div class="header">
+        <div class="iconazo" (click)="irA('visualizador/' + parametro)">
+          <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 21 34" width="100%" preserveAspectRatio="none">
+            <path d="M21 11H6.83l3.58-3.59L9 6l-6 6 6 6 1.41-1.41L6.83 13H21z" />
+          </svg>
+        </div>
+        <div class="titulo">
+          <h1 class="estilo-titulo">Subír foto <br> cosas {{parametro}}</h1>
+        </div>
+        <div class="icon-logout" (click)="cerrarSesion()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 21 21">
+            <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="container"> 
+      <div class="card" (click)="onCardClick()">
+        <ng-container *ngIf="selectedImage; else svgTemplate">
+          <img [src]="selectedImage" alt="Selected Image" class="foto" />
+        </ng-container>
+        <ng-template #svgTemplate>
+          <svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 24 24" width="100%" preserveAspectRatio="none">
+            <path d="M9 3L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2h-3.17L15 3H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/>
+            <path d="M12 17l1.25-2.75L16 13l-2.75-1.25L12 9l-1.25 2.75L8 13l2.75 1.25z"/>
+          </svg>
+        </ng-template>
+      </div>
+    </div>
+    
+    
+    <!-- Input de archivo, escondido -->
+    <input type="file" #inputFile (change)="subirImagen($event)" accept="image/*" style="display: none;" />
+    
+    <!-- Botón para subir la imagen -->
+    <button 
+      class="boton" 
+      [ngClass]="{'disabled': !selectedImage}" 
+      [disabled]="!selectedImage" 
+      (click)="uploadImage()"
+    >
+      Subír
+    </button>
+
+    
+    
+    
+    
+  </div>
+
+  <div class="modal-overlay" *ngIf="modal">
+    <div class="modal-content">
+      <h2>Cerrar sesión</h2>
+      <p>¿Estás seguro que querés cerrar sesión?</p>
+      <div class="botonesss">
+        <div>
+          <button  (click)="closeModal()" class="volver">Volver</button>
+        </div>
+        <div class="noVolver">
+          <button (click)="desloguearse()"  color="primary">Cerrar sesión</button>
+        </div>
+      </div>
+      
+     
+    </div>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-overlay">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando...</p>
+  </div>
+  
+  <div class="modal-overlay" *ngIf="fotoSubida">
+    <div class="modal-content">
+      <h2>Foto subida con éxito</h2>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="rgb(0,0,0)" />
+      </svg>
+      <br>
+      <button  (click)="closeModal()" class="volver">Cerrar</button>
+
+     
+    </div>
+  </div>
+
+  
+</ion-content>

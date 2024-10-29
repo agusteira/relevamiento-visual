@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(45deg, #F7D002, #FFA500); /* Fondo degradado */
+}
+
+.splash-screen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66vh;
+}
+
+.splash-logo {
+    width: 200px;
+    animation: pulse 2s infinite ease-in-out, glow 3s infinite; /* Animación pulse y glow */
+}
+
+/* Animación de latido */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Tamaño normal */
+    }
+    50% {
+        transform: scale(1.1); /* Aumenta el tamaño un 10% */
+    }
+}
+
+/* Animación de Brillo */
+@keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 5px #fff); }
+    50% { filter: drop-shadow(0 0 20px #fff); }
+}
+
+/* Nueva posición para los textos */
+.splash-screen-text {
+    font-family: 'Verdana', sans-serif;
+    color: black;
+    font-size: 1.6em;
+    padding: 10px;
+    position: absolute;
+    bottom: 10%; /* Los textos estarán en la parte inferior */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px; /* Añadido margen lateral */
+
+}
+h1{
+    font-weight: bold;
+    margin:auto;
+}
+
+
+/* Animación para los textos - deslizamiento desde los lados */
+.text-left {
+    animation: slideFromLeft 1.5s ease-out forwards, fadeInText 2s infinite alternate;
+    font-size: 36px;
+    text-align: center;
+}
+
+.text-right {
+    animation: slideFromRight 1.5s ease-out forwards, fadeInText 2s infinite alternate;
+    font-size: 36px;
+}
+
+/* Deslizamiento desde la izquierda */
+@keyframes slideFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Deslizamiento desde la derecha */
+@keyframes slideFromRight {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Efecto de parpadeo leve en los textos */
+@keyframes fadeInText {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.arriba{
+    margin-top: 10px;
+}
+
+.splash-screen-text-arriba {
+    font-family: 'Verdana', sans-serif;
+    color: black;
+    font-size: 3em;
+    padding: 10px;
+    position: absolute;
+    top: 10%; /* Los textos estarán en la parte inferior */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px; /* Añadido margen lateral */
+
+}

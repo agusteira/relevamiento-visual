@@ -1,0 +1,155 @@
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    background: linear-gradient(45deg, #F7D002, #FFA500); /* Fondo degradado */
+  }
+  
+  /*=========================================*/
+  /*================HEADER=========================*/
+  .fondazo{
+    position: fixed; /* Mantener el header fijo */
+    top: 0; /* Fijar en la parte superior */
+    left: 0; /* Alinear a la izquierda */
+    right: 0; /* Alinear a la derecha */
+    width: 100%;
+    height: 10%;
+    z-index: 1000; /* Asegúrate de que el header esté por encima del contenido */
+  }
+  .header {
+    
+    top: 0; /* Fijar en la parte superior */
+    left: 0; /* Alinear a la izquierda */
+    right: 0; /* Alinear a la derecha */
+    display: flex; /* Usar flexbox para el header */
+    justify-content: space-between; /* Espaciado entre los elementos */
+    align-items: center; /* Alinear verticalmente */
+    color: #1F1300;
+    height: 60px; /* Establece una altura fija para el header */
+    border-bottom: 3px solid #333333; /* Línea separadora */
+    margin: auto;
+    width: 80%;
+    height: 100%;
+}
+
+  
+  
+  .titulo {
+    text-align: center;                   /* Centrar el texto */
+    justify-content: center;
+    margin: 0;                           /* Eliminar margen */
+  
+    font-family: 'Asap', "Montserrat";
+    color: #333333;
+    flex: 1;                             /* Permitir que el título tome el espacio disponible */
+  }
+  
+  .icon-logout {
+    display: flex;                        /* Usar flexbox para centrar el SVG */
+    align-items: center;                  /* Centrar verticalmente el ícono */
+    justify-content: center;              /* Alinear horizontalmente el ícono */
+    width: 30px;                          /* Ancho del ícono contenedor */
+    height: 50px;                         /* Alto del ícono contenedor */
+  }
+  .iconazo{
+    display: flex;                        /* Usar flexbox para centrar el SVG */
+    align-items: center;                  /* Centrar verticalmente el ícono */
+    justify-content: center;              /* Alinear horizontalmente el ícono */
+    width: 30px;                          /* Ancho del ícono contenedor */
+    height: 50px;                         /* Alto del ícono contenedor */
+    fill:#000000;
+    margin-top:7%;
+  }
+  
+  
+  /*=========================================*/
+/*=================Container========================*/
+
+/*=========================================*/
+/*=================Card========================*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  height: 85%;
+}
+
+.card {
+  width: 80%;
+  height: 300px;
+  border-radius: 20px;
+  background-color: #004080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: #002243;
+}
+
+.card svg {
+  width: 100px;
+  height: 100px;
+  fill: white;
+}
+/*=========================================*/
+
+
+.boton {
+  margin: auto;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  font-size: 3rem;
+  border-radius: 50px;
+  background-color: #19612a; /* Verde */
+  box-shadow: 4px 4px 10px rgb(0, 0, 0);
+  margin-bottom: 50px;
+  padding: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+.boton.disabled {
+  background-color: grey; /* Color gris cuando está deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor a no permitido */
+  color:black;
+  font-weight: bold;
+}
+
+
+.foto {
+  width: auto; /* Mantener el ancho automático */
+  height: auto; /* Mantener la altura automática */
+  max-height: 80%; /* Limitar la altura máxima */
+  max-width: 80%; /* Limitar el ancho máximo */
+  border-radius: 4%;
+}
+
+.modal-content button {
+  margin-top:10px;
+  margin-left: 0px;
+  padding:20px;
+  font-weight: bold;
+  color: black;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  
+}
+
+.estilo-titulo{
+  font-family: 'Asap', "Montserrat";
+  font-weight: bold;
+  font-size: 25px;
+}

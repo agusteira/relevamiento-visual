@@ -1,0 +1,180 @@
+.fullscreen-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(45deg, #F7D002, #FFA500); /* Fondo degradado */
+  }
+  
+  /*=========================================*/
+  /*================HEADER=========================*/
+  .fondazo{
+    position: fixed; /* Mantener el header fijo */
+    top: 0; /* Fijar en la parte superior */
+    left: 0; /* Alinear a la izquierda */
+    right: 0; /* Alinear a la derecha */
+    width: 100%;
+    height: 10%;
+    z-index: 1000; /* Asegúrate de que el header esté por encima del contenido */
+  }
+  .header {
+    
+    top: 0; /* Fijar en la parte superior */
+    left: 0; /* Alinear a la izquierda */
+    right: 0; /* Alinear a la derecha */
+    display: flex; /* Usar flexbox para el header */
+    justify-content: space-between; /* Espaciado entre los elementos */
+    align-items: center; /* Alinear verticalmente */
+    color: #1F1300;
+    height: 60px; /* Establece una altura fija para el header */
+    border-bottom: 3px solid #333333; /* Línea separadora */
+    margin: auto;
+    width: 80%;
+    height: 100%;
+}
+
+  
+  
+  .titulo {
+    text-align: center;                   /* Centrar el texto */
+    justify-content: center;
+    margin: 0;                           /* Eliminar margen */
+  
+    font-family: 'Asap', "Montserrat";
+    color: #333333;
+    flex: 1;                             /* Permitir que el título tome el espacio disponible */
+  }
+  
+  .icon-logout {
+    display: flex;                        /* Usar flexbox para centrar el SVG */
+    align-items: center;                  /* Centrar verticalmente el ícono */
+    justify-content: center;              /* Alinear horizontalmente el ícono */
+    width: 30px;                          /* Ancho del ícono contenedor */
+    height: 50px;                         /* Alto del ícono contenedor */
+  }
+  .iconazo{
+    display: flex;                        /* Usar flexbox para centrar el SVG */
+    align-items: center;                  /* Centrar verticalmente el ícono */
+    justify-content: center;              /* Alinear horizontalmente el ícono */
+    width: 30px;                          /* Ancho del ícono contenedor */
+    height: 50px;                         /* Alto del ícono contenedor */
+    fill:#000000;
+    margin-top:7%;
+  }
+  
+  
+  /*=========================================*/
+  /*=================Container========================*/
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    min-width: 80%;
+    min-height: 60%;
+  }
+  
+  /*=========================================*/
+  /*=================Card========================*/
+  
+  /* Estilos para el contenedor del gráfico */
+.card {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #004080; /* Color de fondo del card */
+  color: white;
+  overflow: hidden; /* Para evitar que la imagen se salga del contenedor */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+  padding: 20px; /* Espaciado interno */
+}
+
+/* Estilo para el canvas del gráfico */
+canvas {
+  max-width: 100%; /* Se ajusta al ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+  border-radius: 15px; /* Esquinas redondeadas */
+  //box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para destacar */
+  color:white;
+}
+
+  
+  .foto {
+    width: 50%; /* Ajusta la imagen al 100% del ancho del contenedor */
+    height:auto; /* Ajusta la imagen al 100% de la altura del contenedor */
+    margin:auto;
+  }
+  
+  .texto-card {
+    display: flex; /* Utiliza flexbox para organizar los elementos */
+    justify-content: space-between; /* Espacio entre el usuario y la hora */
+    align-items: center; /* Centra verticalmente */
+    width: 90%;
+  }
+  
+  .usuario {
+    font-weight: bold; /* Resalta el nombre de usuario */
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+    color: #ffffff; /* Color del texto del usuario */
+  }
+  
+  .hora {
+    font-size: 0.9rem; /* Tamaño de la fuente más pequeño */
+    color: #888; /* Color gris más claro para la hora */
+  }
+  .likes{
+    display: flex;                        /* Usar flexbox para centrar el SVG */
+    align-items: center;                  /* Centrar verticalmente el ícono */
+    justify-content: center;              /* Alinear horizontalmente el ícono */
+
+    fill:#ffffff;
+  }
+  .mg{
+    margin:20px;
+    width:50px;
+    height:50px;
+  }
+
+  /*=========================================*/
+  
+  .boton-subir {
+    position: fixed; /* Fija el botón en la pantalla */
+    bottom: 20px; /* Espaciado desde el fondo de la pantalla */
+    right: 20px; /* Espaciado desde la derecha de la pantalla */
+    width: 100px; /* Ancho del botón */
+    height: 100px; /* Alto del botón */
+    background-color: black; /* Color de fondo */
+    color: red; /* Color del texto */
+    border-radius: 50%; /* Hace que el botón sea redondo */
+    display: flex; /* Usado para centrar contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+    font-size: 75px;
+  }
+  
+  .boton-subir:hover {
+    background-color: #FF8C00; /* Color al pasar el mouse */
+  }
+
+
+  canvas {
+    max-width: 600px; // Ajusta el tamaño según tus necesidades
+    max-height: 400px; // Ajusta el tamaño según tus necesidades
+  }
+
+  .estilo-titulo{
+    font-family: 'Asap', "Montserrat";
+    font-weight: bold;
+    font-size: 25px;
+  }
